@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding="UTF-8" standalone="yes" ?>
+<LesEtudiants>
+    <Etudiant>
+        <Id>1</Id>
+        <Nom>TOTO</Nom>
+        <Prenom>Amigo</Prenom>
+        <Groupe>1A</Groupe>
+    </Etudiant>
+    
+    <Etudiant>
+        <Id>2</Id>
+        <Nom>BRASGON</Nom>
+        <Prenom>Andrew</Prenom>
+        <Groupe>1B</Groupe>
+    </Etudiant>
+
+</LesEtudiants>

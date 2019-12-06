@@ -1,0 +1,58 @@
+<?xml version = "1.0" encoding="UTF-8" standalone="yes" ?>
+<LesEtudiants>
+    <Etudiant>
+        <Id>1</Id>
+        <Nom>TOTO</Nom>
+        <Prenom>Amigo</Prenom>
+        <Groupe>1A</Groupe>
+    </Etudiant>
+    
+    <Etudiant>
+        <Id>2</Id>
+        <Nom>BRASGON</Nom>
+        <Prenom>Andrew</Prenom>
+        <Groupe>1B</Groupe>
+    </Etudiant>
+    <Etudiant>
+        <Id>3</Id>
+        <Nom>DAB</Nom>
+        <Prenom>Julie</Prenom>
+        <Groupe>2A</Groupe>
+    </Etudiant>
+    <Etudiant>
+        <Id>4</Id>
+        <Nom>BERSERKER</Nom>
+        <Prenom>Garrosh</Prenom>
+        <Groupe>1A</Groupe>
+    </Etudiant>
+    <Etudiant>
+        <Id>5</Id>
+        <Nom>HURLORAGE</Nom>
+        <Prenom>Illidan</Prenom>
+        <Groupe>1B</Groupe>
+    </Etudiant>
+    <Etudiant>
+        <Id>6</Id>
+        <Nom>THORNS</Nom>
+        <Prenom>Matt</Prenom>
+        <Groupe>2A</Groupe>
+    </Etudiant>
+    <Etudiant>
+        <Id>7</Id>
+        <Nom>TENNANT</Nom>
+        <Prenom>David</Prenom>
+        <Groupe>2B</Groupe>
+    </Etudiant>
+    <Etudiant>
+        <Id>8</Id>
+        <Nom>LIARON</Nom>
+        <Prenom>Laurent</Prenom>
+        <Groupe>2B</Groupe>
+    </Etudiant>
+    <Etudiant>
+        <Id>9</Id>
+        <Nom>VAN BEETHOVEN</Nom>
+        <Prenom>Ludwig</Prenom>
+        <Groupe>1B</Groupe>
+    </Etudiant>
+</LesEtudiants>
