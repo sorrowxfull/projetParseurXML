@@ -6,15 +6,26 @@ import org.xml.sax.helpers.DefaultHandler;
 
 
 public class XMLHandler extends DefaultHandler {
+	
+	boolean inElement = false;
 
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-		if(localName == "Etudiant") {
-			System.out.println("L'étudiant s'appelle");
+		if(localName == "Id") {
+			System.out.println("Id : " + attributes.getValue("value"));
 		}
 		if(localName == "Nom") {
-			System.out.println(qName);
+			System.out.println("Nom : " + attributes.getValue("value"));
 		}
+		if(localName == "Prenom")
+		{
+			System.out.println("Prénom : " + attributes.getValue("value"));
+		}
+		if(localName == "Groupe") {
+			System.out.println("Groupe : " + attributes.getValue("value"));
+		}
+		//System.out.println(uri + "/" + localName + "/" + qName + "/" + attributes.getType(0));
+		
 	}
 
 	public void endElement(String uri, String localName, String qName) throws SAXException {
