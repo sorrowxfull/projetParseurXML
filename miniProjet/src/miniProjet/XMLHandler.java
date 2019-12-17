@@ -7,7 +7,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class XMLHandler extends DefaultHandler {
 	
-	String pageARenvoyer;
+	String pageARenvoyer = " ";
 
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
@@ -27,14 +27,19 @@ public class XMLHandler extends DefaultHandler {
 		switch (localName) {
 			case "LesBalises":
 				pageARenvoyer = pageARenvoyer + "<html>";
+				System.out.println(getPageARenvoyer());
+				System.out.println(getPageARenvoyer());
 				break;
 			case "Corps":
-				pageARenvoyer = pageARenvoyer + "<body>";
+				pageARenvoyer = pageARenvoyer + "<body>" + " " ;
+				System.out.println(getPageARenvoyer());
 				break;
 			case "Titre":
-				pageARenvoyer = pageARenvoyer + "<title>" + " " + attributes.getValue("valeur");
+				pageARenvoyer = pageARenvoyer + "<h1>" + " " + attributes.getValue("valeur");
+				System.out.println(getPageARenvoyer());
 				break;
 			case "Collection":
+				pageARenvoyer = pageARenvoyer + "<p>" + attributes.getValue("fichier");
 				break;
 			case "Paragraphe":
 				break;
@@ -47,14 +52,18 @@ public class XMLHandler extends DefaultHandler {
 		switch (localName) {
 			case "LesBalises":
 				pageARenvoyer = pageARenvoyer + "</html>";
+				System.out.println(getPageARenvoyer());
 				break;
 			case "Corps":
 				pageARenvoyer = pageARenvoyer + "</body>";
+				System.out.println(getPageARenvoyer());
 				break;
 			case "Titre":
-				pageARenvoyer = pageARenvoyer + "</title>";
+				pageARenvoyer = pageARenvoyer + "</h1>";
+				System.out.println(getPageARenvoyer());
 				break;
 			case "Collection":
+				pageARenvoyer = pageARenvoyer + "</p>";
 				break;
 			case "Paragraphe":
 				break;
