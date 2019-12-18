@@ -2,25 +2,25 @@ package miniProjet;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 public class HTTPServer {
 	public static void main(String[] args) throws Exception {
-	    int port = 80;
+	    int port = 8000;
 	    ServerSocket serverSocket = new ServerSocket(port);
+	    serverSocket.setReuseAddress(true);
 	    System.out.println("Serveur démarré");
 
+	    System.out.println(serverSocket.getLocalSocketAddress());
 	    while (true) {
 	        Socket clientSocket = serverSocket.accept();
-
-
 	        BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 	        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
 
 	        String s;
 	        while ((s = in.readLine()) != null) {
-	            System.out.println(s);
 	            if (s.isEmpty()) {
 	                break;
 	            }
@@ -35,9 +35,10 @@ public class HTTPServer {
 	        out.write("Last-modified: Fri, 09 Aug 1996 14:21:40 GMT\r\n");
 	        out.write("\r\n");
 
-	        out.write("<TITLE>Exemple</TITLE>");
-	        out.write("<P>Ceci est une page d'exemple kdjfhkjqsdh.</P>");
-
+	        ParseurXML parse = new ParseurXML();
+	        
+	        parse.parseXML("source/baliseXML.xml");
+	        out.write(parse.getPage());
 	        out.close();
 	        in.close();
 	        clientSocket.close();

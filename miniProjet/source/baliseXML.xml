@@ -1,5 +1,7 @@
 <?xml version = "1.0" encoding="UTF-8" standalone="yes" ?>
 <LesBalises>
-    <Titre valeur="mon titre">
-     </Titre>
+    <Corps>
+        <Titre valeur="Liste des Etudiants"></Titre>
+        <Collection fichier="source/xml1.xml"></Collection>
+    </Corps>
 </LesBalises>
