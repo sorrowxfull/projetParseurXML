@@ -18,13 +18,11 @@ public class HTTPServer {
 	        Socket clientSocket = serverSocket.accept();
 	        BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 	        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
-
-	        String s;
-	        while ((s = in.readLine()) != null) {
-	            if (s.isEmpty()) {
-	                break;
-	            }
-	        }
+	        String line = in.readLine();            
+            String[] getOutput = line.split(" ");
+            System.out.println(getOutput[1]);
+            String[] outGetSlash = getOutput[1].split("/");
+            System.out.println(outGetSlash[1]);
 
 	        out.write("HTTP/1.0 200 OK\r\n");
 	        out.write("Date: Fri, 31 Dec 1999 23:59:59 GMT\r\n");
@@ -34,11 +32,26 @@ public class HTTPServer {
 	        out.write("Expires: Sat, 01 Jan 2000 00:59:59 GMT\r\n");
 	        out.write("Last-modified: Fri, 09 Aug 1996 14:21:40 GMT\r\n");
 	        out.write("\r\n");
-
-	        ParseurXML parse = new ParseurXML();
 	        
-	        parse.parseXML("source/baliseXML.xml");
-	        out.write(parse.getPage());
+//	        if(outGetSlash[1] == "index" || outGetSlash[1] == "") {
+//	        	ParseurXML parse = new ParseurXML();
+//	        
+//	        	parse.parseXML("source/baliseXML.xml");
+//	        	out.write(parse.getPage());
+//	        }
+	        
+	        ParseurXML parse = new ParseurXML();
+	        switch(outGetSlash[1]){
+	        	 case "index":
+	     	        
+	 	        	parse.parseXML("source/baliseXML.xml");
+	 	        	out.write(parse.getPage());
+	 	        	break;
+	        	 case "detail":
+	        		 String id = outGetSlash[2];
+	        		 parse.parseXMLID("source/detailXML.xml", id);
+	        		 out.write(parse.getPage());
+	        }
 	        out.close();
 	        in.close();
 	        clientSocket.close();

@@ -1,6 +1,6 @@
 <LesBalises>
     <Corps>
-        <Titre valeur="Affichage de l'étudiant" get="$_GET["></Titre>
+        <Titre valeur="Affichage de l'étudiant"></Titre>
         <Paragraphe valeur="Id"></Paragraphe>
         <Paragraphe valeur="Nom"></Paragraphe>
         <Paragraphe valeur="Prénom"></Paragraphe>
